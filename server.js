@@ -8,8 +8,8 @@ const mongojs = require("mongojs");
 
 const PORT = process.env.PORT || 3001;
 
-const databaseUrl = "workout";
-const collections = ["exersizes"];
+const databaseUrl = "FitnessTracker";
+const collections = ["Exercise", "Workout"];
 const db = mongojs(databaseUrl, collections);
 
 const app = express();
