@@ -9,7 +9,7 @@ const mongojs = require("mongojs");
 const PORT = process.env.PORT || 3001;
 
 const databaseUrl = "FitnessTracker";
-const collections = ["Exercise", "Workout"];
+const collections = ["Workout"];
 const db = mongojs(databaseUrl, collections);
 
 const app = express();
@@ -21,6 +21,9 @@ app.use(express.json());
 
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use('/exercise', express.static('public/exercise.html'));
+app.use('/stats', express.static('public/stats.html'))
+
 
 app.use(routes);
 
